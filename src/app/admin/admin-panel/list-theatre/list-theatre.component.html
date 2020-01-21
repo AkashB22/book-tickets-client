@@ -1,0 +1,4 @@
+<h3 class="lead">Here is the list of theatres</h3>
+<ul class="theatres">
+    <li class="theatre" *ngFor="let theatre of theatres"><a class="btn btn-md btn-secondary" [routerLink]='["../editTheatre", theatre.name]'>{{theatre.name}}</a></li>
+</ul>

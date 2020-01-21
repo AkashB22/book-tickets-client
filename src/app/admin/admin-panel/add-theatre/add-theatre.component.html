@@ -1,0 +1,47 @@
+<form class="FlowerForm" [formGroup]="form" (ngSubmit)="onAddTheatre($event)" *ngIf="form">
+    <h2 class="FormTitle"><i class="fas fa-film"></i>Theatre Form</h2>
+    <div class="form-group">
+      <label for="name">Name</label>
+      <input type="text" class="form-control" formControlName="name" id="name" placeholder="Enter Theatre Name">
+    </div>
+    <div class="row">
+      <div class="col-4">
+        <div class="form-group">
+          <label for="no-of-screens">No of Screens</label>
+          <input type="number" class="form-control" formControlName="noOfScreens" name="no-of-screens"
+            placeholder="Enter number od screens" (change)="onChangeOfScreens()">
+        </div>
+      </div>
+      <div class="col-8">
+        <div class="screenDetails" formArrayName="screensDetail" *ngFor="let screenDetail of form.get('screensDetail')['controls']; let i=index">
+          <div [formGroupName]="i">
+            <div class="form-group">
+              <label for="running-movie">Running Movie</label>
+              <input type="text" class="form-control" formControlName="runningMovie" name="running-movie"
+                placeholder="Enter running movie">
+            </div>
+      
+            <div class="form-group">
+              <label for="total-seats">Total Seats</label>
+              <input type="number" class="form-control" formControlName="totalSeats" name="total-seats"
+                placeholder="Enter total seats">
+            </div>
+            
+            <div class="form-group">
+              <label for="booked-seats">Booked Seats</label>
+              <input type="number" class="form-control" formControlName="bookedSeats" name="booked-seats"
+                placeholder="Enter booked seats">
+            </div>
+      
+            <div class="form-group">
+              <label for="available-seats">Available Seats</label>
+              <input type="number" class="form-control" formControlName="availableSeats" name="available-seats"
+                placeholder="Enter available seats">
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+    <button type="submit" class="btn btn-md btn-secondary">Add Theatre</button>
+  </form>

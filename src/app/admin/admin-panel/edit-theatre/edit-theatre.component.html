@@ -1,0 +1,54 @@
+<form class="FlowerForm" [formGroup]="form" (ngSubmit)="onEditTheatre($event)" *ngIf="!isLoading && theatre && form">
+  <h2 class="FormTitle"><i class="fas fa-film"></i>Theatre Form</h2>
+  <div class="form-group">
+    <label for="name">Name</label>
+    <input type="text" class="form-control" formControlName="name" id="name" placeholder="Enter Theatre Name">
+  </div>
+  <div class="row">
+    <div class="col-4">
+      <div class="form-group">
+        <label for="no-of-screens">No of Screens</label>
+        <input type="number" class="form-control" formControlName="noOfScreens" name="no-of-screens"
+          placeholder="Enter number od screens">
+      </div>
+    </div>
+    <div class="col-8">
+      <div class="screenDetails" formArrayName="screensDetail" *ngFor="let screenDetail of form.get('screensDetail')['controls']; let i=index">
+        <div [formGroupName]="i">
+          <div class="form-group">
+            <label for="running-movie">Running Movie</label>
+            <input type="text" class="form-control" formControlName="runningMovie" name="running-movie"
+              placeholder="Enter running movie">
+          </div>
+    
+          <div class="form-group">
+            <label for="total-seats">Total Seats</label>
+            <input type="number" class="form-control" formControlName="totalSeats" name="total-seats"
+              placeholder="Enter total seats">
+          </div>
+          
+          <div class="form-group">
+            <label for="booked-seats">Booked Seats</label>
+            <input type="number" class="form-control" formControlName="bookedSeats" name="booked-seats"
+              placeholder="Enter booked seats">
+          </div>
+    
+          <div class="form-group">
+            <label for="available-seats">Available Seats</label>
+            <input type="number" class="form-control" formControlName="availableSeats" name="available-seats"
+              placeholder="Enter available seats">
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="row updateAndDeleteBtn pb-5">
+    <div class="col-6 updateBtn">
+      <button type="submit" class="btn btn-md btn-secondary">Update</button>
+    </div>
+    <div class="col-6 deleteBtn">
+      <button type="button" class="btn btn-md btn-danger" (click)="onDeleteTheatre($event)">delete</button>
+    </div>
+  </div>
+</form>

@@ -1,0 +1,32 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <a class="navbar-brand" href="#"><i class="fas fa-ticket-alt"></i>BookTickets</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+        <ul class="navbar-nav ">
+            <li class="nav-item active">
+                <a class="nav-link" [routerLink]="['/Home']"><i class="fas fa-film"></i>Movies <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" [routerLink]="['/Home']"><i class="fas fa-theater-masks"></i>Theatres</a>
+            </li>
+        </ul>
+    </div>
+</nav>
+<main>
+    <div class="card-body">
+        <h5 class="card-title">Welcome to BookTickets App</h5>
+        <p class="card-text">You can book your tickets for a movie on available theatres here</p>
+        <!-- <a href="#" class="btn btn-primary">Enjoy your movies</a> -->
+        <router-outlet></router-outlet>
+    </div>
+</main>
+
+
+<footer class="footer bg-dark">
+    <div class="container">
+        <span class="text-muted"><i class="fas fa-copyright"></i>BookTickets <i class="fas fa-trademark"></i>BookTickets.com</span>
+    </div>
+</footer>

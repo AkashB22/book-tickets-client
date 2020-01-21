@@ -1,0 +1,17 @@
+<p><i class="fas fa-video"></i>Here is the movie wise selection</p>
+
+<div class="movies" *ngIf="movies">
+    <ul>
+        <li *ngFor="let movie of movies">
+            <button class="btn btn-secondary" (click)="onMovie(movie.name)">{{movie.name}}</button>
+            <div *ngIf="movieName==movie.name">
+                Available Theatres: 
+                <ul>
+                    <li *ngFor="let data of movie.common">
+                        <button class="btn btn-success" (click)="onBookingTicket(data.name, movie.name)">{{data.name}}</button>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>

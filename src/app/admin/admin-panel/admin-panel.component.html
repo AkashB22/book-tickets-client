@@ -1,0 +1,24 @@
+<div class="cover-container d-flex w-100 h-100 p-3 mx-auto flex-column">
+	<header class="masthead mb-auto">
+		<div class="inner">
+			<h3 class="masthead-brand"><i class="fas fa-ticket-alt"></i>BookTickets</h3>
+			<nav class="nav nav-masthead justify-content-center">
+				<a class="nav-link active" [routerLink]='["listTheatre"]'><i class="fas fa-theater-masks"></i>List theatre</a>
+				<a class="nav-link" [routerLink]='["addTheatre"]'><i class="fas fa-file-video"></i>Add theatre</a>
+				<a class="nav-link" [routerLink]='["addMovie"]'><i class="fas fa-video"></i>Movies</a>
+			</nav>
+		</div>
+	</header>
+
+	<main role="main" class="inner cover">
+		<h1 class="cover-heading"><i class="fas fa-users-cog"></i>Admin DashBoard</h1>
+		<router-outlet></router-outlet>
+	</main>
+
+	<footer class="mastfoot mt-auto">
+		<div class="inner">
+			<p>book ticket in <a href="#"><i class="fas fa-copyright"></i>BookTicket app</a>, by <a
+					href="#"><i class="fas fa-trademark"></i>bookticket</a>.</p>
+		</div>
+	</footer>
+</div>

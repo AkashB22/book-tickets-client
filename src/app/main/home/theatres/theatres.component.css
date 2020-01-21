@@ -1,0 +1,8 @@
+.theatres li{
+    list-style-type: none;
+}
+
+.theatres button{
+    margin-bottom: 1em;
+    width: 30%;
+}

@@ -1,0 +1,17 @@
+<p><i class="fas fa-file-video"></i>Here is a theatre wise selection</p>
+
+<div class="theatres" *ngIf="theatres">
+    <ul>
+        <li *ngFor="let theatre of theatres; let i = index">
+            <button class="btn btn-secondary" (click)="onTheatre(theatre.name)">{{theatre.name}}</button>
+            <div *ngIf="theatreName===theatre.name">
+                Available Movies: 
+                <ul>
+                    <li *ngFor="let screen of theatre.screensDetail">
+                        <button class="btn btn-success" (click)="onBookingTicket(theatre.name, screen.runningMovie)">{{screen.runningMovie}}</button>
+                    </li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</div>

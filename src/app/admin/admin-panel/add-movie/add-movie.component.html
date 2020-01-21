@@ -1,0 +1,10 @@
+<h3 class="lead">Here is the list of theatres</h3>
+<ul class="movies">
+    <li class="movie" *ngFor="let movie of movies"><button class="btn btn-md btn-secondary">{{movie.name}}</button></li>
+</ul>
+
+<form class="form-inline addNewMovie pb-5" [formGroup]="form" (ngSubmit)="addNewMovie($event)">
+    <label for="name" class="mr-2">Movie Name: </label>
+    <input class="form-control mb-2 mr-2" type="text" name="name" placeholder="Enter new movies" formControlName="name">
+    <button type="submit" class="btn btn-secondary mb-2">Add movie</button>
+</form>

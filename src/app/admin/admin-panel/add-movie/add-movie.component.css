@@ -1,0 +1,8 @@
+.movie{
+    list-style-type: none;
+    padding-top: 1em;
+}
+
+.addNewMovie input[type="text"] {
+    width: 60%
+}

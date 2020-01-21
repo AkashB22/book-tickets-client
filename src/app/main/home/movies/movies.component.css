@@ -1,0 +1,8 @@
+.movies li{
+    list-style-type: none;
+}
+
+.movies button{
+    margin-bottom: 1em;
+    width: 30%;
+}
